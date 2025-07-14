@@ -58,8 +58,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-br  from-blue-50 to-indigo-100 py-3">
-      <header className="p-6 bg-neutral-900/90 backdrop-blur-xl shadow-sm max-w-[80%] mx-auto rounded-md ">
+    <div className="min-h-screen w-full bg-gradient-to-br from-blue-50 to-indigo-100 py-3">
+      <header className="p-6 bg-neutral-900/90 backdrop-blur-xl shadow-sm max-w-[80%] mx-auto rounded-md">
         <div className="max-w-6xl mx-auto flex items-center justify-between ">
           <div className="flex items-center space-x-2">
             <Book className="h-8 w-8 text-indigo-600" />
