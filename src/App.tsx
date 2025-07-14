@@ -1,52 +1,6 @@
-// import { useRef, useState } from "react"
-// import axios from 'axios';
-
-
-// export default function App () {
-//   // const userInput = useRef("");
-//   const [reply, setReply] = useState("");
-//   //@ts-ignore
-//   // const handlerFunc = (e) => {
-//   //   userInput.current = e.target?.value;
-//   // }
-//   const getModule = async () => {
-//     const response = await axios.post('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent',{
-//       "contents": [
-//         {
-//             "parts": [
-//                  {
-//                     "text": "Refine the topic into the  structured learning modules and just give  all the  chapters or topics very structured manner and for every chapter and every topic please give the proper explanation as beginner freindly  : Explain how AI works"
-//                 }
-//             ]
-//         }
-//        ]
-//     }, {
-//       params: {
-//         key: "AIzaSyB9u6HZtBT0f_HXgbE5Lu--lJLLePCodv4"
-//       }
-//     });
-//     const actuatData = response.data.candidates[0].content.parts[0].text;
-//     setReply(actuatData);
-//   }
-
-//   // const data =  getModule();
-//   // console.log(data);
-
-  
-
-//   return <div>
-//     <h1>Hello</h1>
-//     {/* <input type="text" value={userInput?.current} onChange={ (e) => handlerFunc(e) }/>
-//     <input className="bg-black text-white p-1" placeholder="Search your topic" type="text" />
-//     <button className="bg-green-700 text-white ml-2 p-1" onClick={getModule}>Search</button> */}
-//     <button onClick={getModule}>Search</button>
-//     <h2>{reply? reply: "No data yet"}</h2>
-//   </div>
-// }
 
 import { useState } from 'react';
 import { AlertCircle, Book, Compass, Lightbulb, Search } from 'lucide-react';
-
 
 function App() {
   const [topic, setTopic] = useState('');
@@ -170,7 +124,7 @@ function App() {
               </h3>
               <ul className="space-y-1">
                 
-                {content.map((module:any, moduleIndex:any) => (
+                {(content as any).map((module:any, moduleIndex:any) => (
                   <li key={moduleIndex}>
                     <button
                       onClick={() => setActiveModule(moduleIndex)}
@@ -199,7 +153,7 @@ function App() {
             </div>
 
             <div className="md:col-span-8 lg:col-span-9">
-              {content[activeModule].chapters.map((chapter:any, chapterIndex:any) => (
+              {(content[activeModule] as any).chapters.map((chapter:any, chapterIndex:any) => (
                 <div 
                   key={chapterIndex} 
                   id={`chapter-${activeModule}-${chapterIndex}`}
@@ -240,13 +194,16 @@ function App() {
                   Previous Module
                 </button>
                 <button 
+                //@ts-ignore
                   onClick={() => setActiveModule(Math.min(content.length - 1, activeModule + 1))}
+                  // @ts-ignore
                   disabled={activeModule === content.length - 1}
+                  
                   className={`px-4 py-2 rounded-lg bg-indigo-600 text-white ${
-                    activeModule === content.length - 1 
+                    activeModule === (content as any).length - 1 
                       ? 'bg-gray-400 cursor-not-allowed' 
                       : 'hover:bg-indigo-700'
-                  }`}
+                  }`} 
                 >
                   Next Module
                 </button>
