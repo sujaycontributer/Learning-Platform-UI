@@ -63,7 +63,7 @@ function App() {
         <div className="max-w-6xl mx-auto flex items-center justify-between ">
           <div className="flex items-center space-x-2">
             <Book className="h-8 w-8 text-indigo-600" />
-            <h1 className="text-2xl font-bold text-gray-800">LearnGen</h1>
+            <h1 className="text-2xl font-bold text-indigo-600">LearnGen</h1>
           </div>
           <nav className="hidden md:flex items-center  space-x-6 ">
             <a href="#" className="text-white hover:text-indigo-600 font-medium">Home</a>
