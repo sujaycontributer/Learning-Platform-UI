@@ -27,7 +27,10 @@ function App() {
   const generateContent = (topic:any) => {
     // This would be replaced with an actual API call
     // For demo purposes, generate dummy content based on the topic
-    const modules = [
+    const modules:{
+      title: string,
+      content: {title: string, content: string} []
+    }[] = [
       {
         title: `Introduction to ${topic}`,
         chapters: [
