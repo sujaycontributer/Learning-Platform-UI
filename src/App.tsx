@@ -26,7 +26,7 @@ function App() {
 
   const generateContent = (topic:any) => {
     // This would be replaced with an actual API call
-    // For demo purposes, generate dummy content based on the topic
+    // For demo purposes, generate dummy content based on the topic , have to add gemini api here
     const modules:{
       title: string,
       content: {title: string, content: string} []
