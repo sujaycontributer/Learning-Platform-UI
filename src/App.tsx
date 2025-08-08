@@ -9,7 +9,7 @@ function App() {
   const [activeModule, setActiveModule] = useState(0);
 
   //@ts-ignore
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:any) => {
     e.preventDefault();
     if (!topic.trim()) return;
     
